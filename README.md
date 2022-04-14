@@ -59,12 +59,32 @@ classDiagram
         +name: String
         +cpf: String 
         +telefone: String
+        +endereco: Endereco
+    }
+    class Endereco {
+        +id: Int
+        +bairro: Bairro
         +rua: String
         +rua_numero: Int
-        +bairro: String
-        +cidade: String
+        +cidade: Cidade
         +complemento: String
     }
+    class Cidade {
+        <<enumeration>>
+        BELO HORIZONTE
+    }
+    class Bairro {
+        <<enumeration>>
+        BELVEDERE
+        SION
+        SAVASSI
+        LOURDES
+        FUNCIONARIOS
+        MANGABEIRAS
+    }
+    Endereco *-- Bairro
+    Endereco *-- Cidade
+    Cliente *-- Endereco
     Usuario <|-- Cliente
 
     class Produto {
@@ -110,20 +130,7 @@ classDiagram
     Pizza *-- SaborPizza
     Pizza *-- Tamanho
 
-    class Endereco {
-        +id: Int
-        +bairro: Bairro
-    }
-    class Bairro {
-        <<enumeration>>
-        BELVEDERE
-        SION
-        SAVASSI
-        LOURDES
-        FUNCIONARIOS
-        MANGABEIRAS
-    }
-    Endereco *-- Bairro
+    
 
 ```
 
