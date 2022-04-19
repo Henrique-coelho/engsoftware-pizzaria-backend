@@ -1,13 +1,13 @@
-package com.henrique_coelho.pizza_backend;
+package engsoftware.cefetmg.pizzaria;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PizzaBackendApplication {
+public class EngsoftwarePizzariaBackendApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PizzaBackendApplication.class, args);
+		SpringApplication.run(EngsoftwarePizzariaBackendApplication.class, args);
 	}
 
 }

@@ -1,10 +1,10 @@
-package com.henrique_coelho.pizza_backend;
+package engsoftware.cefetmg.pizzaria;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PizzaBackendApplicationTests {
+class EngsoftwarePizzariaBackendApplicationTests {
 
 	@Test
 	void contextLoads() {
