@@ -23,5 +23,5 @@ public class Cliente {
 
     private String telefone;
 
-    private String endereço;
+    private String endereco;
 }

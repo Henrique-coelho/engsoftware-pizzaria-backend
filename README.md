@@ -1,7 +1,7 @@
 # Grupo 4 - Trabalho 1 – Laboratório de Engenharia de Software I
 
 Neste trabalho prático, o grupo deverá criar uma aplicação Web para realizar a
-entrega de pedidos para uma pizzaria. Utilizaremos em nossa aplicação Spring Boot Java 18 para backend, React para frontend e MySQL para o banco de dados.
+entrega de pedidos para uma pizzaria. Utilizaremos em nossa aplicação Spring Boot Java 11 para backend, React para frontend e MySQL para o banco de dados.
 
 ## Instalação
 
@@ -30,8 +30,8 @@ flowchart
     E --> |Não| C
     C --> |Não| F[Página cadastro]
     
-    F --> Z
-    Z[Cadastrar] --> G
+    F --> Z[Cadastrar]
+    Z --> G
     G --> H[Página pizzas/sabores]
     H --> I[Montar pedido]
     I --> J[Página endereço]
