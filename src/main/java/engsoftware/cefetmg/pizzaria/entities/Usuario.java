@@ -8,21 +8,14 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@Table(name = "clientes")
-public class Cliente {
+@Table(name = "usuarios")
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nome;
+    private String email;
 
-    private String cpf;
-    
-    private String telefone;
-
-    private String endereco;
-
-    @OneToOne
-    private Usuario usuario;
+    private String senha;
 }
