@@ -34,36 +34,6 @@ O projeto não compilará caso não suba o banco de dados MySQL.
 3. Suba o frontend pelo comando "npm start".
 
 
-## Flowchart
-
-```mermaid
-flowchart
-    A[Página inicial] --> B[Fazer pedido]
-    B --> C{Usuário ja possui conta?}
-
-    C --> |Sim| D[Autenticar]
-    D --> E{Dados de acesso corretos?}
-
-    E --> |Sim| G[Usuário logado]
-    E --> |Não| C
-    C --> |Não| F[Página cadastro]
-    
-    F --> Z[Cadastrar]
-    Z --> G
-    G --> H[Página pizzas/sabores]
-    H --> I[Montar pedido]
-    I --> J[Página endereço]
-
-    J --> O{Endereço em BH?}
-    O --> |Sim| L[Página pagamento]
-    O --> |Não| J
-
-    L --> Y{Pagamento realizado com sucesso?}
-
-    Y --> |Sim| M[Página conclusão]
-    Y --> |Não| L
-```
-
 ## Diagrama de Classes
 
 ```mermaid
@@ -83,9 +53,9 @@ classDiagram
     }
     class Endereco {
         +id: Long
-        +bairro: Bairro
         +rua: String
-        +rua_numero: Integer
+        +rua_numero: Long
+		+bairro: Bairro
         +cidade: Cidade
         +complemento: String
     }
@@ -151,6 +121,37 @@ classDiagram
     Produto <|-- Pizza
     Pizza *-- SaborPizza
     Pizza *-- Tamanho
+```
+
+
+## Flowchart
+
+```mermaid
+flowchart
+    A[Página inicial] --> B[Fazer pedido]
+    B --> C{Usuário ja possui conta?}
+
+    C --> |Sim| D[Autenticar]
+    D --> E{Dados de acesso corretos?}
+
+    E --> |Sim| G[Usuário logado]
+    E --> |Não| C
+    C --> |Não| F[Página cadastro]
+    
+    F --> Z[Cadastrar]
+    Z --> G
+    G --> H[Página pizzas/sabores]
+    H --> I[Montar pedido]
+    I --> J[Página endereço]
+
+    J --> O{Endereço em BH?}
+    O --> |Sim| L[Página pagamento]
+    O --> |Não| J
+
+    L --> Y{Pagamento realizado com sucesso?}
+
+    Y --> |Sim| M[Página conclusão]
+    Y --> |Não| L
 ```
 
 
