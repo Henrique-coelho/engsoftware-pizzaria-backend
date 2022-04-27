@@ -16,6 +16,8 @@ E o seguinte comando para importar o frontend à sua máquina:
 git clone https://github.com/MyLittleFoxxie/engsoftware-pizzaria-frontend.git
 ```
 
+Lembre de realizar a instalação do JDK 11 e node.js em sua máquina!
+
 Para instalar o banco de dados MySQL que utilizaremos, siga os seguintes passos:
 1. Baixe e instale o software [XAMPP](https://www.apachefriends.org/download.html).
 2. Inicie os módulos de Apache e MySQL.
@@ -30,10 +32,6 @@ O projeto não compilará caso não suba o banco de dados MySQL.
 1. Suba o banco de dados MySQL pelo software XAMPP. 
 2. Suba o backend Java pelo Maven.
 3. Suba o frontend pelo comando "npm start".
-
-## URL
-
-[URL do site gerado](http://localhost:3000/)
 
 
 ## Flowchart
@@ -71,23 +69,23 @@ flowchart
 ```mermaid
 classDiagram
     class Usuario {
-        +id: Int
+        +id: Long
         +email: String
         +senha: String
     }
     class Cliente {
-        +id: Int
+        +id: Long
         +nome: String
         +cpf: String 
         +telefone: String
-        +endereco: Endereco
-        +usuario_id: Int
+        +endereco_id: int
+        +usuario_id: int
     }
     class Endereco {
-        +id: Int
+        +id: Long
         +bairro: Bairro
         +rua: String
-        +rua_numero: Int
+        +rua_numero: Integer
         +cidade: Cidade
         +complemento: String
     }
@@ -110,11 +108,12 @@ classDiagram
     Usuario <|-- Cliente
 
     class Produto {
-        +id: Int
-        +preco: Int
+        +id: Long
+        +preco: Long
     }
     class Bebida {
         +sabor_bebida: SaborBebida
+        +produto_id: int
     }
     class SaborBebida {
         <<enumeration>>
@@ -125,7 +124,7 @@ classDiagram
     class Pizza {
         +sabor_pizza: SaborPizza
         +tamanho: Tamanho 
-        +produto_id: Int
+        +produto_id: int
     }
     class SaborPizza {
         <<enumeration>>
@@ -152,9 +151,6 @@ classDiagram
     Produto <|-- Pizza
     Pizza *-- SaborPizza
     Pizza *-- Tamanho
-
-    
-
 ```
 
 
