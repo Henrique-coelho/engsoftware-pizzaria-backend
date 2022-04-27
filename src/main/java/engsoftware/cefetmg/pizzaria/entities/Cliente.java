@@ -21,7 +21,8 @@ public class Cliente {
     
     private String telefone;
 
-    private String endereco;
+    @OneToOne
+    private Endereco endereco;
 
     @OneToOne
     private Usuario usuario;

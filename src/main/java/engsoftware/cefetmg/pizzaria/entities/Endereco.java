@@ -20,7 +20,7 @@ public class Endereco {
 
     private String rua;
     
-    private Integer rua_numero;
+    private Long rua_numero;
 
     @Enumerated(EnumType.ORDINAL)
     private Bairro bairro;
