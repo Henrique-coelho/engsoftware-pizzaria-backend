@@ -11,7 +11,7 @@ import engsoftware.cefetmg.pizzaria.enums.Cidade;
 @Entity
 @Getter
 @Setter
-@Table(name = "enderecos")
+@Table(name = "Endereco")
 public class Endereco {
 
     @Id
@@ -20,13 +20,11 @@ public class Endereco {
 
     private String rua;
     
-    private Long rua_numero;
+    private int numero;
 
-    @Enumerated(EnumType.ORDINAL)
-    private Bairro bairro;
+    private String bairro;
 
-    @Enumerated(EnumType.ORDINAL)
-    private Cidade cidade;
+    private String cidade;
 
     private String complemento;
 

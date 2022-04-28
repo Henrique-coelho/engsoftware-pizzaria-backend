@@ -1,14 +1,14 @@
 package engsoftware.cefetmg.pizzaria.entities;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@Getter
-@Setter
-@Table(name = "usuarios")
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "Usuario")
 public class Usuario {
 
     @Id
@@ -18,4 +18,7 @@ public class Usuario {
     private String email;
 
     private String senha;
+
+    @OneToOne
+    private Cliente cliente;
 }
