@@ -1,5 +1,6 @@
 package engsoftware.cefetmg.pizzaria.entities;
 
+import engsoftware.cefetmg.pizzaria.entities.Endereco;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,9 +22,11 @@ public class Cliente {
     
     private String telefone;
 
+    private String email;
+
+    private String senha;
+
     @OneToOne
     private Endereco endereco;
 
-    @OneToOne
-    private Usuario usuario;
 }
