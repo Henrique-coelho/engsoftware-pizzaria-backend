@@ -2,7 +2,9 @@ package engsoftware.cefetmg.pizzaria.services.impl;
 
 import engsoftware.cefetmg.pizzaria.entities.Pedido;
 import engsoftware.cefetmg.pizzaria.models.dto.PedidoDTO;
+import engsoftware.cefetmg.pizzaria.models.enums.BebidaEnum;
 import engsoftware.cefetmg.pizzaria.models.enums.SaborPizzaEnum;
+import engsoftware.cefetmg.pizzaria.models.enums.TamanhoEnum;
 import engsoftware.cefetmg.pizzaria.repositories.PedidoRepository;
 import engsoftware.cefetmg.pizzaria.repositories.PizzaRepository;
 import engsoftware.cefetmg.pizzaria.services.PizzaService;
@@ -31,12 +33,21 @@ public class PizzaServiceImpl implements PizzaService {
     }
 
     public String postPedido(Pedido pedido) {
-        //TODO implement calculo pedido
+        List<Integer> valores = new ArrayList<>();
+        pedido.getProdutos().stream()
+                .forEach(s -> {
+                if(s.getIsPizza()) {
+                    valores.add(TamanhoEnum.valueOf(s.getDescricao()).valor);
+                } else {
+                    valores.add(BebidaEnum.valueOf(s.getNome()).valor);
+                }
+        });
+        var total = valores.stream().mapToInt(x -> x).sum();
 
-        pedidoRepository.save(pedido);
+        //TODO salvar no banco
+        //pedidoRepository.save(pedido);
 
-        return null;
-
+        return Integer.toString(total);
     }
 
 

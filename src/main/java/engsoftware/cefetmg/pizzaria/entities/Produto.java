@@ -19,6 +19,6 @@ public class Produto {
 
     private String descricao;
 
-    private boolean isPizza;
+    private Boolean isPizza;
 
 }

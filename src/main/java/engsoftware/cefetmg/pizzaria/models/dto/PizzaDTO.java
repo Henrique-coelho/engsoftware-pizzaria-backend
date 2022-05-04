@@ -7,7 +7,7 @@ import lombok.Getter;
 @Data
 @Getter
 @Builder
-public class PizzaDTO extends ProdutoDTO{
+public class PizzaDTO {
 
     private String sabor;
 

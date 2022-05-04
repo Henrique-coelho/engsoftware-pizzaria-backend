@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class BebidaDTO extends ProdutoDTO{
+public class BebidaDTO {
 
     private String sabor;
 
