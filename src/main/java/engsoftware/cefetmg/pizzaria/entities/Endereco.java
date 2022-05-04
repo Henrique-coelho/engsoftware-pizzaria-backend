@@ -5,9 +5,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-import engsoftware.cefetmg.pizzaria.enums.Bairro;
-import engsoftware.cefetmg.pizzaria.enums.Cidade;
-
 @Entity
 @Getter
 @Setter

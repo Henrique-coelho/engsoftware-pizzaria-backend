@@ -4,28 +4,19 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
-@Table(name = "Cliente")
-public class Cliente {
+@Table(name = "Pedido")
+public class Pedido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nome;
-
-    private String cpf;
-    
-    private String telefone;
-
-    private String email;
-
-    private String senha;
-
-    @OneToOne
-    private Endereco endereco;
+    @OneToMany
+    private List<Produto> produtos;
 
 }
