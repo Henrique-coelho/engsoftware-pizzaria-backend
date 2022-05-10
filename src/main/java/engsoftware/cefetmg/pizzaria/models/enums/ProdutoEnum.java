@@ -4,7 +4,8 @@ public enum ProdutoEnum {
     PIZZA("Pizza"),
     BEBIDA("Bebida");
 
-    private String descricao;
+    public String descricao;
+    
     ProdutoEnum(String descricao){
         this.descricao = descricao;
     }

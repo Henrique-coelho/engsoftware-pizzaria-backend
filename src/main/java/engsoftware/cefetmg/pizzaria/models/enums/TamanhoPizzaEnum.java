@@ -1,6 +1,6 @@
 package engsoftware.cefetmg.pizzaria.models.enums;
 
-public enum TamanhoEnum {
+public enum TamanhoPizzaEnum {
 
     GIGANTE("GG", 80),
     GRANDE("G", 70),
@@ -9,7 +9,8 @@ public enum TamanhoEnum {
 
     public String codigoTamanho;
     public int valor;
-    TamanhoEnum(String codigo, int preco) {
+    
+    TamanhoPizzaEnum(String codigo, int preco) {
         codigoTamanho = codigo;
         valor = preco;
     }

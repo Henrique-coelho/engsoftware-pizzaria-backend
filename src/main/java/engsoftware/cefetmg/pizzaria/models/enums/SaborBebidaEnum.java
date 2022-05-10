@@ -1,6 +1,6 @@
 package engsoftware.cefetmg.pizzaria.models.enums;
 
-public enum BebidaEnum {
+public enum SaborBebidaEnum {
 
     GUARANA("Guaraná", 5),
     COCA_COLA("Coca-Cola", 6),
@@ -9,7 +9,7 @@ public enum BebidaEnum {
     public String nome;
     public int valor;
 
-    BebidaEnum(String nome, int valor) {
+    SaborBebidaEnum(String nome, int valor) {
         this.nome = nome;
         this.valor = valor;
     }

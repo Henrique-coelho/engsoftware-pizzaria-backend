@@ -19,6 +19,10 @@ public class Produto {
 
     private String descricao;
 
+    private String img;
+
     private Boolean isPizza;
+
+    private Boolean isBebida;
 
 }

@@ -31,7 +31,7 @@ O projeto não compilará caso não suba o banco de dados MySQL.
 
 1. Suba o banco de dados MySQL pelo software XAMPP. 
 2. Suba o backend Java pelo Maven.
-3. Suba o frontend pelo comando "npm start".
+3. Suba o frontend pelo comando "npm run dev".
 
 
 ## Diagrama de Classes

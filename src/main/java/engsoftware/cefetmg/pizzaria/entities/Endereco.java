@@ -15,15 +15,21 @@ public class Endereco {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String rua;
+    private Long cep;
+
+    private String logradouro;
+
+    private String complemento;
     
-    private int numero;
+    private Long numero;
 
     private String bairro;
 
-    private String cidade;
+    private String localidade;
 
-    private String complemento;
+    private String uf;
+
+    
 
 }
 
