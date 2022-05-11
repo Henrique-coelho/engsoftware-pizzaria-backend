@@ -17,6 +17,8 @@ public class Cliente {
 
     private String nome;
 
+    private String sobrenome;
+
     private String cpf;
     
     private String telefone;
@@ -25,7 +27,7 @@ public class Cliente {
 
     private String senha;
 
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.ALL})
     private Endereco endereco;
 
 }
