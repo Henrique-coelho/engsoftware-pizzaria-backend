@@ -6,6 +6,7 @@ import engsoftware.cefetmg.pizzaria.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,6 +24,7 @@ public class ClienteController {
     @Autowired
     private ClienteService clienteService;
 
+    @CrossOrigin
     @PostMapping("/createUpdate")
     public ResponseEntity<String> createUpdate(@RequestBody Cliente cliente){
         var retorno = clienteService.saveCliente(cliente);
@@ -33,18 +35,22 @@ public class ClienteController {
         }
     }
 
+    @CrossOrigin
     @GetMapping("/getAll")
     public Iterable<Cliente> getAllClientes(){
         return clienteService.getAllClientes();
     }
 
+    @CrossOrigin
     @GetMapping("/{id}")
     public Optional<Cliente> findById(@PathVariable String id){
         return clienteService.getClienteById(id);
     }
 
+    @CrossOrigin
     @PostMapping("/login")
     public List<Cliente> getCredentials(@RequestBody LoginDTO loginDTO) {
         return clienteService.validateLogin(loginDTO);
     }
 }
+    
