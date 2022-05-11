@@ -1,5 +1,6 @@
 package engsoftware.cefetmg.pizzaria.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,16 +14,20 @@ public class Produto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
     private Long id;
 
-    private String nome;
+    private String name;
 
-    private String descricao;
+    @JsonIgnore
+    private String info;
 
+    @JsonIgnore
     private String img;
 
-    private Boolean isPizza;
+    private Integer price;
 
-    private Boolean isBebida;
+    private Integer quantity;
+
 
 }

@@ -1,6 +1,7 @@
 package engsoftware.cefetmg.pizzaria.services.impl;
 
 import engsoftware.cefetmg.pizzaria.entities.Pedido;
+import engsoftware.cefetmg.pizzaria.entities.Produto;
 import engsoftware.cefetmg.pizzaria.models.enums.SaborBebidaEnum;
 import engsoftware.cefetmg.pizzaria.models.enums.SaborPizzaEnum;
 import engsoftware.cefetmg.pizzaria.models.enums.TamanhoPizzaEnum;
@@ -36,17 +37,9 @@ public class ProdutoServiceImpl implements ProdutoService {
         return sabores;
     }
 
-    public Pedido savePedido(Pedido pedido) {
-        List<Integer> valores = new ArrayList<>();
-        pedido.getProdutos().stream()
-                .forEach(s -> {
-                if(s.getIsPizza()) {
-                    valores.add(TamanhoPizzaEnum.valueOf(s.getDescricao()).valor);
-                } else {
-                    valores.add(SaborBebidaEnum.valueOf(s.getNome()).valor);
-                }
-        });
-        pedido.setValorTotal(valores.stream().mapToLong(x -> x).sum());
+    public Pedido savePedido(List<Produto> produtos) {
+        var pedido = new Pedido();
+        pedido.setProdutos(produtos);
         pedidoRepository.save(pedido);
 
         return pedido;

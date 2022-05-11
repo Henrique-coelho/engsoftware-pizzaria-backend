@@ -1,5 +1,6 @@
 package engsoftware.cefetmg.pizzaria.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,11 +15,10 @@ public class Pedido {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
     private Long id;
 
-    private Long valorTotal;
-
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
     private List<Produto> produtos;
 
 }

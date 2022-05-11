@@ -1,6 +1,7 @@
 package engsoftware.cefetmg.pizzaria.controllers;
 
 import engsoftware.cefetmg.pizzaria.entities.Pedido;
+import engsoftware.cefetmg.pizzaria.entities.Produto;
 import engsoftware.cefetmg.pizzaria.services.ProdutoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class ProdutoController {
     }
 
     @PostMapping("/realizarPedido")
-    public Pedido savePedido(@RequestBody Pedido body) {
+    public Pedido savePedido(@RequestBody List<Produto> body) {
         return produtoService.savePedido(body);
     }
 }
