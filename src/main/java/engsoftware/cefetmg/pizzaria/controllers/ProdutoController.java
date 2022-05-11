@@ -5,6 +5,8 @@ import engsoftware.cefetmg.pizzaria.entities.Produto;
 import engsoftware.cefetmg.pizzaria.services.ProdutoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,7 +24,8 @@ public class ProdutoController {
     }
 
     @PostMapping("/realizarPedido")
-    public Pedido savePedido(@RequestBody List<Produto> body) {
-        return produtoService.savePedido(body);
+    public ResponseEntity<Pedido> savePedido(@RequestBody List<Produto> body) {
+        var pedido = produtoService.savePedido(body);
+        return new ResponseEntity<>(pedido, HttpStatus.OK);
     }
 }
